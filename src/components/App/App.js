@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 function App() {
     //const [secret,setSecret] = React.useState();
+
   return (
     <>
         <Wrapper>
@@ -21,6 +22,7 @@ function App() {
                 <Caculate>Calculate</Caculate>
             </Topside>
         </Wrapper>
+        
     </>
   );
 }
