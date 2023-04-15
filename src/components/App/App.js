@@ -10,6 +10,19 @@ const banks = [
     {
         bankname: "Bank of Baroda"
     },
+    {
+        bankname: "Bank of Baroda"
+    },{
+        bankname: "Citibank"
+    },{
+        bankname: "HDFC Bank"
+    },{
+        bankname: "HSBC"
+    },{
+        bankname: "ICIC Bank"
+    },{
+        bankname: "State Bank"
+    },
 ];
 
 function App() {
@@ -37,7 +50,9 @@ function App() {
                             </option>
                         ))}
                     </Select>
-                   
+                   <Subtile>
+                    Bank
+                   </Subtile>
                 </form>
                 <Input value="NaveenSingh" type="text" />
                 <Caculate>Calculate</Caculate>
@@ -52,6 +67,17 @@ function App() {
     </>
   );
 }
+
+const Subtile = styled.span`
+    position: absolute;
+    top: 11.2rem;
+    left: 40rem;
+    right: 2rem;
+    font-size: 12px;
+    padding: 10px;
+    color:  #aeaeb0;
+
+`;
 
 const Caculate = styled.button`
     padding: 16px 50px;
@@ -71,7 +97,7 @@ const Input = styled.input`
 
 const Select = styled.select`
     width: 250px;
-    padding: 20px;
+    padding: 29px  18px 15px 20px;
     border-radius: 15px;
     border-color: rgb(210, 210, 215);
     font-family: system-ui;
@@ -91,7 +117,9 @@ const Topside = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 2rem;`;
+    font-size: 2rem;
+        
+`;
 
 const Wrapper = styled.div`
     display: flex;
