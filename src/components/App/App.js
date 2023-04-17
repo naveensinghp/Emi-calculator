@@ -29,13 +29,15 @@ function App() {
     const [secret,setSecret] = React.useState();
   return (
     <>
-        <Wrapper>
+        <Parent>
             <Title>
                 Calculate your monthly instalment options.
             </Title>
+            {/* Child */}
             <Topside>
                 <form>
-                    <Select
+                      {/* dropdown Child -1 */}
+                      <Select
                         id="bankemi"
                         value={secret}
                         onChange={event => {
@@ -50,34 +52,34 @@ function App() {
                             </option>
                         ))}
                     </Select>
-                   <Subtile>
-                    Bank
-                   </Subtile>
+                     {/* dropdown Child - 2 */}
+                    <Input 
+                        id="order-amount"
+                        value="1000" 
+                        type="number" 
+                    />
+                     {/* dropdown Child -3 */}
+                    <Caculate>Calculate</Caculate>
                 </form>
-                <Input value="NaveenSingh" type="text" />
-                <Caculate>Calculate</Caculate>
             </Topside>
-            <div style={{'display': 'flex'}}>
+            <Terms>
                 <div>Terms</div>
-                <div>Monthly instalment</div>
-            </div>
-            {secret}
-        </Wrapper>
+                <div></div>
+                <div>Monthly Instalments</div>
+            </Terms>
+        </Parent>
         
     </>
   );
 }
 
-const Subtile = styled.span`
-    position: absolute;
-    top: 11.2rem;
-    left: 40rem;
-    right: 2rem;
-    font-size: 12px;
-    padding: 10px;
-    color:  #aeaeb0;
 
+const Terms = styled.div`
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
 `;
+
 
 const Caculate = styled.button`
     padding: 16px 50px;
@@ -88,11 +90,11 @@ const Caculate = styled.button`
     background-color: #0071e3;
     border-radius: 14px;
 `;
-
 const Input = styled.input`
     height: 50px;
     border-color: rgb(210, 210, 215);
     border-radius: 15px;
+    border-style: solid;
 `;
 
 const Select = styled.select`
@@ -102,32 +104,24 @@ const Select = styled.select`
     border-color: rgb(210, 210, 215);
     font-family: system-ui;
     font-size: 1rem;
-    :after{
-
-    }
 `;
-
 
 const Topside = styled.div`
     padding-top: 120px;
     display: flex;
-    flex-direction: row;
     gap: 50px;
-    border-radius: 20px;
 `;
 
 const Title = styled.div`
-    font-size: 2rem;
-        
+    font-size: 2rem;   
 `;
 
-const Wrapper = styled.div`
+const Parent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 50vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
-`;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`
+
 
 export default App;
