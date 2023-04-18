@@ -30,14 +30,10 @@ function App() {
   return (
     <>
         <Parent>
-            <Title>
-                Calculate your monthly instalment options.
-            </Title>
-            {/* Child */}
+            <Title>Calculate your monthly instalment options.</Title>
             <Topside>
                 <form>
-                      {/* dropdown Child -1 */}
-                      <Select
+                    <Select
                         id="bankemi"
                         value={secret}
                         onChange={event => {
@@ -52,21 +48,19 @@ function App() {
                             </option>
                         ))}
                     </Select>
-                     {/* dropdown Child - 2 */}
                     <Input 
                         id="order-amount"
                         value="1000" 
                         type="number" 
                     />
-                     {/* dropdown Child -3 */}
                     <Caculate>Calculate</Caculate>
                 </form>
             </Topside>
-            <Terms>
+            {/* <Terms>
                 <div>Terms</div>
                 <div></div>
                 <div>Monthly Instalments</div>
-            </Terms>
+            </Terms> */}
         </Parent>
         
     </>
@@ -82,7 +76,7 @@ const Terms = styled.div`
 
 
 const Caculate = styled.button`
-    padding: 16px 50px;
+    padding: 20px 80px;
     font-size: 16px;
     text-align: center;
     color: white;
@@ -91,10 +85,13 @@ const Caculate = styled.button`
     border-radius: 14px;
 `;
 const Input = styled.input`
-    height: 50px;
+    height: 60px;
     border-color: rgb(210, 210, 215);
     border-radius: 15px;
     border-style: solid;
+    width: 200px;
+    font-size: 1rem;
+    text-align: center;
 `;
 
 const Select = styled.select`
@@ -102,18 +99,20 @@ const Select = styled.select`
     padding: 29px  18px 15px 20px;
     border-radius: 15px;
     border-color: rgb(210, 210, 215);
-    font-family: system-ui;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
 `;
 
-const Topside = styled.div`
-    padding-top: 120px;
+const Topside = styled.form`
+    padding-top: 100px;
     display: flex;
-    gap: 50px;
+    gap: 20px;
 `;
 
 const Title = styled.div`
-    font-size: 2rem;   
+    padding-top: 120px;
+    font-size: 2.5rem;
+    font-weight: bold;
 `;
 
 const Parent = styled.div`
