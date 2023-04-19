@@ -5,55 +5,65 @@ import styled from "styled-components";
 
 const banks = [
     {
-        bankname: "American Express"
+        id: 1,
+        bankname: "American Express",
+        amount: 2000,
     },
     {
-        bankname: "Bank of Baroda"
+        id:2,
+        bankname: "Bank of Baroda",
+        amount: 2000,
     },
-    {
-        bankname: "Bank of Baroda"
+   {
+        id:3,
+        bankname: "Citibank",
+        amount: 2000,
     },{
-        bankname: "Citibank"
+        id:4,
+        bankname: "HDFC Bank",
+        amount: 2000,
     },{
-        bankname: "HDFC Bank"
+        id:5,
+        bankname: "HSBC",
+        amount: 2000,
     },{
-        bankname: "HSBC"
+        id:6,
+        bankname: "ICIC Bank",
+        amount: 2000,
     },{
-        bankname: "ICIC Bank"
-    },{
-        bankname: "State Bank"
+        id:7,
+        bankname: "State Bank",
+        amount: 2000,
     },
 ];
 
 function App() {
-    const [secret,setSecret] = React.useState("");
+    const [secret,setSecret] = React.useState("State Bank");
   return (
     <>
         <Parent>
             <Title>Calculate your monthly instalment options.</Title>
             <Topside>
-                <form>
+                
                     <Select
                         id="bankemi"
+                        required
+                        name="emibank"
                         value={secret}
                         onChange={event => {
                             setSecret(event.target.value)
                         }}
                     >
+                    <option value="" >- Select Bank -</option>
+                    <optgroup label="Banks">
+                    {banks.map(option => (
                         <option 
-                        value="test"
-                        onChange={setSecret}
-                        
-                        >
-                            feefefef
-                        </option>
-                    {/* {banks.map(option => (
-                        <option 
-                            key= {option.bankname}
+                            key= {option.id}
                             value={option.bankname}>
                                 {option.bankname}
                             </option>
-                        ))} */}
+                        ))}
+                         </optgroup>
                     </Select>
                     <Input 
                         id="order-amount"
@@ -61,7 +71,7 @@ function App() {
                         type="number" 
                     />
                     <Caculate>Calculate</Caculate>
-                </form>
+                
             </Topside>
             {/* <Terms>
                 <div>Terms</div>
@@ -107,10 +117,10 @@ const Select = styled.select`
     border-radius: 15px;
     border-color: rgb(210, 210, 215);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
     appearance: none;
     &:after{
         content: "\256";
+        border-radius: 15px;
     }
 `;
 
@@ -119,6 +129,8 @@ const Topside = styled.form`
     display: flex;
     gap: 20px;
     position: relative;
+    font-size: 1.4rem;
+    
 `;
 
 const Title = styled.div`
