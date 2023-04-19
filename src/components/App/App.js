@@ -1,41 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { EMIBANKS } from "../../constants";
 
 
 
-const banks = [
-    {
-        id: 1,
-        bankname: "American Express",
-        amount: 2000,
-    },
-    {
-        id:2,
-        bankname: "Bank of Baroda",
-        amount: 2000,
-    },
-   {
-        id:3,
-        bankname: "Citibank",
-        amount: 2000,
-    },{
-        id:4,
-        bankname: "HDFC Bank",
-        amount: 2000,
-    },{
-        id:5,
-        bankname: "HSBC",
-        amount: 2000,
-    },{
-        id:6,
-        bankname: "ICIC Bank",
-        amount: 2000,
-    },{
-        id:7,
-        bankname: "State Bank",
-        amount: 2000,
-    },
-];
 
 function App() {
     const [secret,setSecret] = React.useState("State Bank");
@@ -56,7 +24,7 @@ function App() {
                     >
                     <option value="" >- Select Bank -</option>
                     <optgroup label="Banks">
-                    {banks.map(option => (
+                    {EMIBANKS.map(option => (
                         <option 
                             key= {option.id}
                             value={option.bankname}>
