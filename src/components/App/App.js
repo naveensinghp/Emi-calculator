@@ -26,7 +26,7 @@ const banks = [
 ];
 
 function App() {
-    const [secret,setSecret] = React.useState();
+    const [secret,setSecret] = React.useState("");
   return (
     <>
         <Parent>
@@ -40,13 +40,20 @@ function App() {
                             setSecret(event.target.value)
                         }}
                     >
-                    {banks.map(option => (
+                        <option 
+                        value="test"
+                        onChange={setSecret}
+                        
+                        >
+                            feefefef
+                        </option>
+                    {/* {banks.map(option => (
                         <option 
                             key= {option.bankname}
                             value={option.bankname}>
                                 {option.bankname}
                             </option>
-                        ))}
+                        ))} */}
                     </Select>
                     <Input 
                         id="order-amount"
@@ -76,7 +83,7 @@ const Terms = styled.div`
 
 
 const Caculate = styled.button`
-    padding: 20px 80px;
+    padding: 20px 60px;
     font-size: 16px;
     text-align: center;
     color: white;
@@ -95,18 +102,23 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-    width: 250px;
+    width: 100%;
     padding: 29px  18px 15px 20px;
     border-radius: 15px;
     border-color: rgb(210, 210, 215);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
+    appearance: none;
+    &:after{
+        content: "\256";
+    }
 `;
 
 const Topside = styled.form`
     padding-top: 100px;
     display: flex;
     gap: 20px;
+    position: relative;
 `;
 
 const Title = styled.div`
