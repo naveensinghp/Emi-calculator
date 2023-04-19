@@ -11,8 +11,9 @@ function App() {
     <>
         <Parent>
             <Title>Calculate your monthly instalment options.</Title>
+            
             <Topside>
-                
+                    
                     <Select
                         id="bankemi"
                         required
@@ -37,10 +38,14 @@ function App() {
                         id="order-amount"
                         value="1000" 
                         type="number" 
+                        onChange={(event) => {
+                            setSecret(event.target.value);
+                        }}
                     />
                     <Caculate>Calculate</Caculate>
-                
+                   
             </Topside>
+           
             {/* <Terms>
                 <div>Terms</div>
                 <div></div>
