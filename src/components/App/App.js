@@ -43,12 +43,60 @@ function App() {
                 <div>Terms</div>
                 <div>Monthly Instalments</div>
             </Terms>
+            <Height />
+            <div className="parent" 
+                        style={{
+                            width: '100%',
+                            backgroundColor: 'yellow',
+                            padding: '20px',
+                            display: 'flex',
+                            justifyContent: 'spaceEvenly',
+                            flexDirection: 'row',
+                            alignItems: 'baseline'
+                    }}
+                >
+                    <div className="children">
+                        <div style={{
+                            color: '#bf4800',
+                            fontWeight: 'lighter'
+                            
+                            }}>
+                            No Cost EMI
+                        </div>
+                        <div style={{
+                            fontWeight: 'bold'
+                        }}
+                        
+                        >3 Instalments</div>
+                        <div>₹10000.00 total cost includes 14% pa</div>
+                    </div>
+                    <div className="children-two">
+                        <div style={{
+                            fontWeight: 'bold',
+                            fontSize: '2rem',
+                            FontFace: 's'
+                        }}
+                        
+                        >₹1667.00/mo.</div>
+                        <div style={{
+                            color: '#bf4800'
+                        }}
+
+                          >Includes total savings of ₹229.00.</div>
+                    </div>
+                </div>
         </Parent>
         
     </>
   );
 }
 
+
+
+const Nocostemi = styled.div`
+    width: 100%;
+    background-color: beige;
+`;
 
 const Height = styled.div`
     height: 20px;
@@ -62,8 +110,6 @@ const Terms = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: baseline;
-    
-    flex-direction: row;
 `;
 
 
@@ -87,16 +133,17 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-    /* width: 100%;
+    width: 100%;
     padding: 29px  18px 15px 20px;
     background-color: yellow;
     border-color: rgb(210, 210, 215);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Ubuntu, 'Helvetica Neue', sans-serif;
     
-    /* &:after{
+     &:after{
         content: "\256";
         border-radius: 15px;
-    } */
+    }
 `;
 
 const Topside = styled.form`
@@ -120,7 +167,7 @@ const Parent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 's'
 `
 
 
