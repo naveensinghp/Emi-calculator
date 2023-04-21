@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { EMIBANKS } from "../../constants";
 
 
-
-
 function App() {
     const [secret,setSecret] = React.useState("State Bank");
   return (
