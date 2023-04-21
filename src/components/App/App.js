@@ -9,46 +9,40 @@ function App() {
     <>
         <Parent>
             <Title>Calculate your monthly instalment options.</Title>
-            
             <Topside>
-                    
-                    <Select
-                        id="bankemi"
-                        required
-                        name="emibank"
-                        value={secret}
-                        onChange={event => {
-                            setSecret(event.target.value)
-                        }}
-                    >
-                    <option value="" >- Select Bank -</option>
+                <Select
+                    id="bankemi"
+                    required
+                    name="emibank"
+                    value={secret}
+                    onChange={event => {
+                        setSecret(event.target.value)
+                    }}>
+                    <option value="">- Select Bank -</option>
                     <optgroup label="Banks">
-                    {EMIBANKS.map(option => (
+                        {EMIBANKS.map(option => (
                         <option 
                             key= {option.id}
-                            value={option.bankname}>
-                                {option.bankname}
-                            </option>
+                            value={option.bankname}>{option.bankname}
+                        </option>
                         ))}
-                         </optgroup>
-                    </Select>
-                    <Input 
-                        id="order-amount"
-                        value="1000" 
-                        type="number" 
-                        onChange={(event) => {
-                            setSecret(event.target.value);
-                        }}
-                    />
-                    <Caculate>Calculate</Caculate>
-                   
+                    </optgroup>
+                </Select>
+                <Input 
+                    id="order-amount"
+                    value="1000" 
+                    type="number" 
+                    onChange={(event) => {
+                        setSecret(event.target.value);
+                    }}
+                />
+                <Caculate>Calculate</Caculate>
             </Topside>
-           
-            {/* <Terms>
+            <Height />
+            <Terms>
                 <div>Terms</div>
-                <div></div>
                 <div>Monthly Instalments</div>
-            </Terms> */}
+            </Terms>
         </Parent>
         
     </>
@@ -56,9 +50,19 @@ function App() {
 }
 
 
+const Height = styled.div`
+    height: 20px;
+`;
+
 const Terms = styled.div`
+    background-color: hotpink;
+    padding: 20px;
+    width: 100%;
     display: flex;
-    gap: 50px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    
     flex-direction: row;
 `;
 
@@ -83,16 +87,16 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-    width: 100%;
+    /* width: 100%;
     padding: 29px  18px 15px 20px;
-    border-radius: 15px;
+    background-color: yellow;
     border-color: rgb(210, 210, 215);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    appearance: none;
-    &:after{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    
+    /* &:after{
         content: "\256";
         border-radius: 15px;
-    }
+    } */
 `;
 
 const Topside = styled.form`
@@ -101,6 +105,8 @@ const Topside = styled.form`
     gap: 20px;
     position: relative;
     font-size: 1.4rem;
+    background-color: antiquewhite;
+    border-radius: 15px;
     
 `;
 
