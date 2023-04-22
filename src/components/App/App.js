@@ -50,7 +50,7 @@ function App() {
                             backgroundColor: 'yellow',
                             padding: '20px',
                             display: 'flex',
-                            justifyContent: 'spaceEvenly',
+                            justifyContent:'space-evenly',
                             flexDirection: 'row',
                             alignItems: 'baseline'
                     }}
@@ -137,8 +137,7 @@ const Select = styled.select`
     padding: 29px  18px 15px 20px;
     background-color: yellow;
     border-color: rgb(210, 210, 215);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Ubuntu, 'Helvetica Neue', sans-serif;
+    font-family: 'Jost', sans-serif;
     
      &:after{
         content: "\256";
@@ -167,7 +166,7 @@ const Parent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 's'
+    font-family: 'Jost', sans-serif;
 `
 
 
