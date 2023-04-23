@@ -4,7 +4,12 @@ import { EMIBANKS } from "../../constants";
 
 
 function App() {
-    const [secret,setSecret] = React.useState("State Bank");
+    const [secret,setSecret] = React.useState("American Express");
+    const[orderAmount,setOrderAmount]= React.useState("10000");
+    function calcMonthlyInstallment(){
+        let value = orderAmount / 12;
+        console.log(orderAmount)
+    }
   return (
     <>
         <Parent>
@@ -16,7 +21,8 @@ function App() {
                     name="emibank"
                     value={secret}
                     onChange={event => {
-                        setSecret(event.target.value)
+                        //setSecret(event.target.value)
+                        calcMonthlyInstallment()
                     }}>
                     <option value="">- Select Bank -</option>
                     <optgroup label="Banks">
@@ -30,36 +36,156 @@ function App() {
                 </Select>
                 <Input 
                     id="order-amount"
-                    value="1000" 
-                    type="number" 
+                    value={orderAmount} 
+                    type="number"
+                    name={orderAmount} 
                     onChange={(event) => {
-                        setSecret(event.target.value);
+                        setOrderAmount(event.target.value);
                     }}
                 />
                 <Caculate>Calculate</Caculate>
             </Topside>
             <Height />
+            <b> Choosed Bank : {secret}</b>
             <Terms>
                 <div>Terms</div>
                 <div>Monthly Instalments</div>
             </Terms>
-            <Height />
             <div className="parent" 
                         style={{
                             width: '100%',
-                            backgroundColor: 'yellow',
+                            backgroundColor: '#fbfbfd',
                             padding: '20px',
                             display: 'flex',
                             justifyContent:'space-evenly',
-                            flexDirection: 'row',
                             alignItems: 'baseline'
                     }}
                 >
                     <div className="children">
                         <div style={{
                             color: '#bf4800',
-                            fontWeight: 'lighter'
-                            
+                            fontWeight: 'lighter',
+                            letterSpacing: '1px'
+                            }}>
+                            No Cost EMI
+                        </div>
+                        <div style={{
+                            fontWeight: 'bold'
+                        }}
+                        
+                        >3 Instalments</div>
+                        <div>₹10000.00 total cost includes 14% pa</div>
+                    </div>
+                    <div className="children-two">
+                        <div style={{
+                            fontWeight: 'bold',
+                            fontSize: '2rem',
+                            FontFace: 's'
+                        }}
+                        
+                        >₹1667.00/mo.</div>
+                        <div style={{
+                            color: '#bf4800'
+                        }}
+
+                          >Includes total savings of ₹229.00.</div>
+                    </div>
+                </div>
+                <div className="parent" 
+                        style={{
+                            width: '100%',
+                             backgroundColor: '#fbfbfd',
+                            padding: '20px',
+                            display: 'flex',
+                            justifyContent:'space-evenly',
+                            alignItems: 'baseline'
+                    }}
+                >
+                    <div className="children">
+                        <div style={{
+                            color: '#bf4800',
+                            fontWeight: 'lighter',
+                            letterSpacing: '1px'
+                            }}>
+                            No Cost EMI
+                        </div>
+                        <div style={{
+                            fontWeight: 'bold'
+                        }}
+                        
+                        >3 Instalments</div>
+                        <div>₹10000.00 total cost includes 14% pa</div>
+                    </div>
+                    <div className="children-two">
+                        <div style={{
+                            fontWeight: 'bold',
+                            fontSize: '2rem',
+                            FontFace: 's'
+                        }}
+                        
+                        >₹1667.00/mo.</div>
+                        <div style={{
+                            color: '#bf4800'
+                        }}
+
+                          >Includes total savings of ₹229.00.</div>
+                    </div>
+                </div>
+                <div className="parent" 
+                        style={{
+                            width: '100%',
+                             backgroundColor: '#fbfbfd',
+                            padding: '20px',
+                            display: 'flex',
+                            justifyContent:'space-evenly',
+                            alignItems: 'baseline'
+                    }}
+                >
+                    <div className="children">
+                        <div style={{
+                            color: '#bf4800',
+                            fontWeight: 'lighter',
+                            letterSpacing: '1px'
+                            }}>
+                            No Cost EMI
+                        </div>
+                        <div style={{
+                            fontWeight: 'bold'
+                        }}
+                        
+                        >3 Instalments</div>
+                        <div>₹10000.00 total cost includes 14% pa</div>
+                    </div>
+                    <div className="children-two">
+                        <div style={{
+                            fontWeight: 'bold',
+                            fontSize: '2rem',
+                            FontFace: 's'
+                        }}
+                        
+                        >₹1667.00/mo.</div>
+                        <div style={{
+                            color: '#bf4800'
+                        }}
+
+                          >Includes total savings of ₹229.00.</div>
+                    </div>
+                </div>
+                <div className="parent" 
+                        style={{
+                            width: '100%',
+                             backgroundColor: '#fbfbfd',
+                            padding: '20px',
+                            display: 'flex',
+                            justifyContent:'space-evenly',
+                            alignItems: 'baseline'
+                    }}
+                >
+                    <div className="children">
+                        <div style={{
+                            color: '#bf4800',
+                            fontWeight: 'lighter',
+                            letterSpacing: '1px'
                             }}>
                             No Cost EMI
                         </div>
@@ -103,7 +229,7 @@ const Height = styled.div`
 `;
 
 const Terms = styled.div`
-    background-color: hotpink;
+    /* background-color: hotpink; */
     padding: 20px;
     width: 100%;
     display: flex;
@@ -135,14 +261,12 @@ const Input = styled.input`
 const Select = styled.select`
     width: 100%;
     padding: 29px  18px 15px 20px;
-    background-color: yellow;
+    /* background-color: yellow; */
     border-color: rgb(210, 210, 215);
     font-family: 'Jost', sans-serif;
-    
-     &:after{
-        content: "\256";
-        border-radius: 15px;
-    }
+    font-size: 14px;
+    border-radius: 15px;
+     
 `;
 
 const Topside = styled.form`
@@ -151,7 +275,7 @@ const Topside = styled.form`
     gap: 20px;
     position: relative;
     font-size: 1.4rem;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     border-radius: 15px;
     
 `;
@@ -166,7 +290,7 @@ const Parent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Didact Gothic', sans-serif;
 `
 
 

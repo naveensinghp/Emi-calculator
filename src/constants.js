@@ -1,5 +1,3 @@
-
-
 export const EMIBANKS = [
     {
         id: 1,
@@ -32,4 +30,13 @@ export const EMIBANKS = [
         bankname: "State Bank",
         amount: 2000,
     },
+];
+
+export const emiInstallment =[
+    {
+        installmentmonth: 3,
+        amount:3333.00,
+        intrest: '₹10000.00 total cost includes 14% pa',
+        totalsavings: 'Includes total savings of ₹229.00'
+    }
 ];
