@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { EMIBANKS } from "../../constants";
+import { EMIBANKS, EMIINSTALLMENT } from "../../constants";
 
 
 function App() {
@@ -21,8 +21,7 @@ function App() {
                     name="emibank"
                     value={secret}
                     onChange={event => {
-                        //setSecret(event.target.value)
-                        calcMonthlyInstallment()
+                        setSecret(event.target.value)
                     }}>
                     <option value="">- Select Bank -</option>
                     <optgroup label="Banks">
@@ -51,172 +50,60 @@ function App() {
                 <div>Terms</div>
                 <div>Monthly Instalments</div>
             </Terms>
-            <div className="parent" 
-                        style={{
-                            width: '100%',
-                            backgroundColor: '#fbfbfd',
-                            padding: '20px',
-                            display: 'flex',
-                            justifyContent:'space-evenly',
-                            alignItems: 'baseline'
-                    }}
-                >
-                    <div className="children">
-                        <div style={{
-                            color: '#bf4800',
-                            fontWeight: 'lighter',
-                            letterSpacing: '1px'
-                            }}>
-                            No Cost EMI
-                        </div>
-                        <div style={{
-                            fontWeight: 'bold'
-                        }}
-                        
-                        >3 Instalments</div>
-                        <div>₹10000.00 total cost includes 14% pa</div>
-                    </div>
-                    <div className="children-two">
-                        <div style={{
-                            fontWeight: 'bold',
-                            fontSize: '2rem',
-                            FontFace: 's'
-                        }}
-                        
-                        >₹1667.00/mo.</div>
-                        <div style={{
-                            color: '#bf4800'
-                        }}
-
-                          >Includes total savings of ₹229.00.</div>
-                    </div>
-                </div>
-                <div className="parent" 
-                        style={{
-                            width: '100%',
-                             backgroundColor: '#fbfbfd',
-                            padding: '20px',
-                            display: 'flex',
-                            justifyContent:'space-evenly',
-                            alignItems: 'baseline'
-                    }}
-                >
-                    <div className="children">
-                        <div style={{
-                            color: '#bf4800',
-                            fontWeight: 'lighter',
-                            letterSpacing: '1px'
-                            }}>
-                            No Cost EMI
-                        </div>
-                        <div style={{
-                            fontWeight: 'bold'
-                        }}
-                        
-                        >3 Instalments</div>
-                        <div>₹10000.00 total cost includes 14% pa</div>
-                    </div>
-                    <div className="children-two">
-                        <div style={{
-                            fontWeight: 'bold',
-                            fontSize: '2rem',
-                            FontFace: 's'
-                        }}
-                        
-                        >₹1667.00/mo.</div>
-                        <div style={{
-                            color: '#bf4800'
-                        }}
-
-                          >Includes total savings of ₹229.00.</div>
-                    </div>
-                </div>
-                <div className="parent" 
-                        style={{
-                            width: '100%',
-                             backgroundColor: '#fbfbfd',
-                            padding: '20px',
-                            display: 'flex',
-                            justifyContent:'space-evenly',
-                            alignItems: 'baseline'
-                    }}
-                >
-                    <div className="children">
-                        <div style={{
-                            color: '#bf4800',
-                            fontWeight: 'lighter',
-                            letterSpacing: '1px'
-                            }}>
-                            No Cost EMI
-                        </div>
-                        <div style={{
-                            fontWeight: 'bold'
-                        }}
-                        
-                        >3 Instalments</div>
-                        <div>₹10000.00 total cost includes 14% pa</div>
-                    </div>
-                    <div className="children-two">
-                        <div style={{
-                            fontWeight: 'bold',
-                            fontSize: '2rem',
-                            FontFace: 's'
-                        }}
-                        
-                        >₹1667.00/mo.</div>
-                        <div style={{
-                            color: '#bf4800'
-                        }}
-
-                          >Includes total savings of ₹229.00.</div>
-                    </div>
-                </div>
-                <div className="parent" 
-                        style={{
-                            width: '100%',
-                             backgroundColor: '#fbfbfd',
-                            padding: '20px',
-                            display: 'flex',
-                            justifyContent:'space-evenly',
-                            alignItems: 'baseline'
-                    }}
-                >
-                    <div className="children">
-                        <div style={{
-                            color: '#bf4800',
-                            fontWeight: 'lighter',
-                            letterSpacing: '1px'
-                            }}>
-                            No Cost EMI
-                        </div>
-                        <div style={{
-                            fontWeight: 'bold'
-                        }}
-                        
-                        >3 Instalments</div>
-                        <div>₹10000.00 total cost includes 14% pa</div>
-                    </div>
-                    <div className="children-two">
-                        <div style={{
-                            fontWeight: 'bold',
-                            fontSize: '2rem',
-                            FontFace: 's'
-                        }}
-                        
-                        >₹1667.00/mo.</div>
-                        <div style={{
-                            color: '#bf4800'
-                        }}
-
-                          >Includes total savings of ₹229.00.</div>
-                    </div>
-                </div>
+            
+            {  EMIINSTALLMENT.map(data =>(
+                    <EmithinChild>
+                        <NocostEMI>No Cost EMI</NocostEMI>
+                        <Installment>
+                            {data.installmentmonth} Instalments
+                        </Installment>
+                        <Interest>₹10000.00 total cost includes 14% pa</Interest>
+                        <EmithingchildTwo>
+                        ₹1667.00/mo.
+                        </EmithingchildTwo>
+                    </EmithinChild>
+                ))}
+            
         </Parent>
         
     </>
   );
 }
 
+
+const EmithingchildTwo = styled.div`
+
+
+`;
+
+const Interest = styled.div`
+
+`;
+
+const Installment = styled.div`
+    font-weight: bolder;
+`;
+
+const NocostEMI = styled.div`
+     color: '#bf4800';
+     letter-spacing: '1px';
+`;
+
+const EmithinChild = styled.div`
+    font-family: 'Jost', sans-serif;
+    background-color: hotpink;
+    width: 100%;
+    display: 'flex';
+    justify-content: 'space-around' ;
+`;
+const EmiThing = styled.div`
+    width: '100%';
+    background-color: 'hotpink';
+    padding: '20px';
+    display: 'flex';
+    flex-direction: 'row';
+    justify-content: 'space-around' ;
+`;
 
 
 const Nocostemi = styled.div`
