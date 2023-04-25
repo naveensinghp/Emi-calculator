@@ -46,69 +46,29 @@ function App() {
                 <div>Terms</div>
                 <div>Monthly Instalments</div>
             </Terms>
-            
-                {  EMIINSTALLMENT.map(data =>(
-                    <EmithinChild>
+                    {/* <EmithinChild>
                         <NocostEMI>No Cost EMI</NocostEMI>
-                        <Installment>
-                            {data.installmentmonth} Instalments
-                        </Installment>
+                        <Installment>112 Instalments</Installment>
                         <Interest>₹10000.00 total cost includes 14% pa</Interest>
                         <EmithingchildTwo>
-                        <div style={{
-                                fontWeight: 'bold',
-                                fontSize: '2rem',
-                                FontFace: 's'
-                            }}
-                            
-                            >₹1667.00/mo.</div>
-                            <div style={{
-                                color: '#bf4800'
-                            }}
-
-                                >Includes total savings of ₹229.00.</div>
+                        <div style={{fontWeight: 'bold',fontSize: '2rem'}}>₹1667.00/mo.</div>
+                            <div style={{color: '#bf4800' }}>
+                                Includes total savings of ₹229.00.
+                            </div>
                         </EmithingchildTwo>
-                    </EmithinChild>
-                ))}
+                    </EmithinChild> */}
+                    <EmithingParent>
+                        <EmithingChildOne>
+                            <NocostEMI>No Cost EMI</NocostEMI>
+                            <Installment>3 Instalments</Installment>
+                            <Interest>₹10000.00 total cost includes 14% pa</Interest>
+                        </EmithingChildOne>
+                       <EmithingChildTwo>
+                            <div style={{fontWeight: 'bold',fontSize: '1rem'}}>₹3333.00/mo.</div>
+                            <div style={{color: '#bf4800'}}>Includes total savings of ₹229.00.</div>
+                       </EmithingChildTwo>
+                    </EmithingParent>
                 <br/>
-            <div className="parent" 
-                   style={{
-                       width: '100%',
-                       backgroundColor: '#fbfbfd',
-                       padding: '20px',
-                       display: 'flex',
-                       justifyContent:'space-evenly',
-                       alignItems: 'baseline'
-               }}
-           >
-                        <div className="children">
-                            <div style={{
-                                color: '#bf4800',
-                                fontWeight: 'lighter',
-                                letterSpacing: '1px'
-                                }}>
-                                No Cost EMI
-                            </div>
-                            <div style={{fontWeight: 'bold'}}
-                            >  23 Instalments
-                            </div>
-                            <div>₹10000.00 total cost includes 14% pa</div>
-                        </div>
-                        <div className="children-two">
-                            <div style={{
-                                fontWeight: 'bold',
-                                fontSize: '2rem',
-                                FontFace: 's'
-                            }}
-                            
-                            >₹1667.00/mo.</div>
-                            <div style={{
-                                color: '#bf4800'
-                            }}
-
-                                >Includes total savings of ₹229.00.</div>
-                        </div>
-                    </div> 
         </Parent>
         
     </>
@@ -116,8 +76,11 @@ function App() {
 }
 
 
-const EmithingchildTwo = styled.div`
+const EmithingChildTwo = styled.div`
 
+`;
+
+const EmithingChildOne = styled.div`
 
 `;
 
@@ -130,17 +93,17 @@ const Installment = styled.div`
 `;
 
 const NocostEMI = styled.div`
-     color: '#bf4800';
+     color: #bf4800;
      letter-spacing: '1px';
 `;
 
-const EmithinChild = styled.div`
+const EmithingParent = styled.div`
     font-family: 'Jost', sans-serif;
-    background-color: hotpink;
+    /* background-color: hotpink; */
     padding: 20px;
     width: 100%;
-    display: 'flex';
-    justify-content: 'space-around' ;
+    display: flex;
+    justify-content: space-evenly;
     align-items: baseline;
 `;
 
