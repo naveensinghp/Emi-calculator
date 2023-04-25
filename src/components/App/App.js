@@ -46,28 +46,19 @@ function App() {
                 <div>Terms</div>
                 <div>Monthly Instalments</div>
             </Terms>
-                    {/* <EmithinChild>
-                        <NocostEMI>No Cost EMI</NocostEMI>
-                        <Installment>112 Instalments</Installment>
-                        <Interest>₹10000.00 total cost includes 14% pa</Interest>
-                        <EmithingchildTwo>
-                        <div style={{fontWeight: 'bold',fontSize: '2rem'}}>₹1667.00/mo.</div>
-                            <div style={{color: '#bf4800' }}>
-                                Includes total savings of ₹229.00.
-                            </div>
-                        </EmithingchildTwo>
-                    </EmithinChild> */}
+                {EMIINSTALLMENT.map(data =>(
                     <EmithingParent>
                         <EmithingChildOne>
                             <NocostEMI>No Cost EMI</NocostEMI>
-                            <Installment>3 Instalments</Installment>
+                            <Installment>{data.installmentmonth} Instalments</Installment>
                             <Interest>₹10000.00 total cost includes 14% pa</Interest>
                         </EmithingChildOne>
                        <EmithingChildTwo>
-                            <div style={{fontWeight: 'bold',fontSize: '1rem'}}>₹3333.00/mo.</div>
+                            <PriceAmount>₹{data.amount}/mo.</PriceAmount>
                             <div style={{color: '#bf4800'}}>Includes total savings of ₹229.00.</div>
                        </EmithingChildTwo>
                     </EmithingParent>
+                ))}
                 <br/>
         </Parent>
         
@@ -75,6 +66,13 @@ function App() {
   );
 }
 
+
+const PriceAmount = styled.div`
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+`;
 
 const EmithingChildTwo = styled.div`
 
