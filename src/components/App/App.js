@@ -6,10 +6,6 @@ import { EMIBANKS, EMIINSTALLMENT } from "../../constants";
 function App() {
     const [secret,setSecret] = React.useState("American Express");
     const[orderAmount,setOrderAmount]= React.useState("10000");
-    function calcMonthlyInstallment(){
-        let value = orderAmount / 12;
-        console.log(orderAmount)
-    }
   return (
     <>
         <Parent>
@@ -51,7 +47,7 @@ function App() {
                 <div>Monthly Instalments</div>
             </Terms>
             
-            {  EMIINSTALLMENT.map(data =>(
+                {  EMIINSTALLMENT.map(data =>(
                     <EmithinChild>
                         <NocostEMI>No Cost EMI</NocostEMI>
                         <Installment>
@@ -59,11 +55,60 @@ function App() {
                         </Installment>
                         <Interest>₹10000.00 total cost includes 14% pa</Interest>
                         <EmithingchildTwo>
-                        ₹1667.00/mo.
+                        <div style={{
+                                fontWeight: 'bold',
+                                fontSize: '2rem',
+                                FontFace: 's'
+                            }}
+                            
+                            >₹1667.00/mo.</div>
+                            <div style={{
+                                color: '#bf4800'
+                            }}
+
+                                >Includes total savings of ₹229.00.</div>
                         </EmithingchildTwo>
                     </EmithinChild>
                 ))}
-            
+                <br/>
+            <div className="parent" 
+                   style={{
+                       width: '100%',
+                       backgroundColor: '#fbfbfd',
+                       padding: '20px',
+                       display: 'flex',
+                       justifyContent:'space-evenly',
+                       alignItems: 'baseline'
+               }}
+           >
+                        <div className="children">
+                            <div style={{
+                                color: '#bf4800',
+                                fontWeight: 'lighter',
+                                letterSpacing: '1px'
+                                }}>
+                                No Cost EMI
+                            </div>
+                            <div style={{fontWeight: 'bold'}}
+                            >  23 Instalments
+                            </div>
+                            <div>₹10000.00 total cost includes 14% pa</div>
+                        </div>
+                        <div className="children-two">
+                            <div style={{
+                                fontWeight: 'bold',
+                                fontSize: '2rem',
+                                FontFace: 's'
+                            }}
+                            
+                            >₹1667.00/mo.</div>
+                            <div style={{
+                                color: '#bf4800'
+                            }}
+
+                                >Includes total savings of ₹229.00.</div>
+                        </div>
+                    </div> 
         </Parent>
         
     </>
@@ -92,24 +137,14 @@ const NocostEMI = styled.div`
 const EmithinChild = styled.div`
     font-family: 'Jost', sans-serif;
     background-color: hotpink;
+    padding: 20px;
     width: 100%;
     display: 'flex';
     justify-content: 'space-around' ;
-`;
-const EmiThing = styled.div`
-    width: '100%';
-    background-color: 'hotpink';
-    padding: '20px';
-    display: 'flex';
-    flex-direction: 'row';
-    justify-content: 'space-around' ;
+    align-items: baseline;
 `;
 
 
-const Nocostemi = styled.div`
-    width: 100%;
-    background-color: beige;
-`;
 
 const Height = styled.div`
     height: 20px;
