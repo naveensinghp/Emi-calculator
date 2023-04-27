@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { EMIBANKS, EMIINSTALLMENT } from "../../constants";
 
-
 function App() {
     const [secret,setSecret] = React.useState("American Express");
     const[orderAmount,setOrderAmount]= React.useState("10000");
