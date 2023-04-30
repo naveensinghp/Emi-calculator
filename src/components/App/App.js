@@ -74,11 +74,13 @@ const PriceAmount = styled.div`
 `;
 
 const EmithingChildTwo = styled.div`
-
+    
 `;
 
 const EmithingChildOne = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 `;
 
 const Interest = styled.div`
@@ -99,6 +101,7 @@ const EmithingParent = styled.div`
     /* background-color: hotpink; */
     padding: 20px;
     width: 100%;
+    gap: 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: baseline;
