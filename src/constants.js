@@ -44,5 +44,29 @@ export const EMIINSTALLMENT =[
         amount: 1667.00,
         interest: '₹10000.00 total cost includes 14% pa',
         totalsavings: 'Includes total savings of ₹396.00.'
+    },
+    {
+        installmentmonth: 9,
+        amount: 1667.00,
+        interest: '₹10000.00 total cost includes 14% pa',
+        totalsavings: 'Includes total savings of ₹396.00.'
+    },
+    {
+        installmentmonth: 12,
+        amount: 1667.00,
+        interest: '₹10000.00 total cost includes 14% pa',
+        totalsavings: 'Includes total savings of ₹396.00.'
+    },
+    {
+        installmentmonth: 18,
+        amount: 1667.00,
+        interest: '₹10000.00 total cost includes 14% pa',
+        totalsavings: 'Includes total savings of ₹396.00.'
+    },
+    {
+        installmentmonth: 24,
+        amount: 1667.00,
+        interest: '₹10000.00 total cost includes 14% pa',
+        totalsavings: 'Includes total savings of ₹396.00.'
     }
 ];

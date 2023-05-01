@@ -40,7 +40,7 @@ function App() {
                 <Caculate>Calculate</Caculate>
             </Topside>
             <Height />
-            <b> Choosed Bank : {secret}</b>
+            <b> Choosed Bank : <strong> {secret}</strong></b>
             <Terms>
                 <div>Terms</div>
                 <div>Monthly Instalments</div>
