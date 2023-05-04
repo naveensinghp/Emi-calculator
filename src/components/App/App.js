@@ -3,42 +3,55 @@ import styled from "styled-components";
 import { EMIBANKS, EMIINSTALLMENT } from "../../constants";
 
 function App() {
-    const [secret,setSecret] = React.useState("American Express");
-    const[orderAmount,setOrderAmount]= React.useState("10000");
+    const [secret,setSecret] = React.useState("American Express"); // Bank dropdown 
+    const[orderAmount,setOrderAmount]= React.useState("10000"); // Amount 
+    function Calc(){
+        console.log('amount',orderAmount);
+    }
   return (
     <>
         <Parent>
             <Title>Calculate your monthly instalment options.</Title>
+            <form
+            className="search-form"
+            onSubmit={event => {
+                event.preventDefault();
+                Calc();
+            }}
+            >
             <Topside>
-                <Select
-                    id="bankemi"
-                    required
-                    name="emibank"
-                    value={secret}
-                    onChange={event => {
-                        setSecret(event.target.value)
-                    }}>
-                    <option value="">- Select Bank -</option>
-                    <optgroup label="Banks">
-                        {EMIBANKS.map(option => (
-                        <option 
-                            key= {option.id}
-                            value={option.bankname}>{option.bankname}
-                        </option>
-                        ))}
-                    </optgroup>
-                </Select>
-                <Input 
-                    id="order-amount"
-                    value={orderAmount} 
-                    type="number"
-                    name={orderAmount} 
-                    onChange={(event) => {
-                        setOrderAmount(event.target.value);
-                    }}
-                />
-                <Caculate>Calculate</Caculate>
+                    <Select
+                        id="bankemi"
+                        required
+                        name="emibank"
+                        value={secret}
+                        onChange={event => {
+                            setSecret(event.target.value)
+                        }}>
+                        <option value="">- Select Bank -</option>
+                        <optgroup label="Banks">
+                            {EMIBANKS.map(option => (
+                            <option 
+                                key= {option.id}
+                                value={option.bankname}>
+                                {option.bankname}
+                            </option>
+                            ))}
+                        </optgroup>
+                    </Select>
+                    <Input 
+                        id="order-amount"
+                        value={orderAmount} 
+                        type="number"
+                        name={orderAmount} 
+                        onChange={(event) => {
+                            setOrderAmount(event.target.value);
+                        }}
+                    />
+                    <Caculate>Calculate</Caculate>
+               
             </Topside>
+            </form>
             <Height />
             <b> Choosed Bank : <strong> {secret}</strong></b>
             <Terms>
@@ -46,7 +59,7 @@ function App() {
                 <div>Monthly Instalments</div>
             </Terms>
                 {EMIINSTALLMENT.map(data =>(
-                    <EmithingParent>
+                    <EmithingParent key={data.installmentmonth}>
                         <EmithingChildOne>
                             <NocostEMI>No Cost EMI</NocostEMI>
                             <Installment>{data.installmentmonth} Instalments</Installment>

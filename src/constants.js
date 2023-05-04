@@ -7,28 +7,28 @@ export const EMIBANKS = [
     {
         id:2,
         bankname: "Bank of Baroda",
-        amount: 2000,
+        amount: 2001,
     },
    {
         id:3,
         bankname: "Citibank",
-        amount: 2000,
+        amount: 2002,
     },{
         id:4,
         bankname: "HDFC Bank",
-        amount: 2000,
+        amount: 2003,
     },{
         id:5,
         bankname: "HSBC",
-        amount: 2000,
+        amount: 2004,
     },{
         id:6,
         bankname: "ICIC Bank",
-        amount: 2000,
+        amount: 2005,
     },{
         id:7,
         bankname: "State Bank",
-        amount: 2000,
+        amount: 2006,
     },
 ];
 
