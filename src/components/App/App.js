@@ -2,24 +2,33 @@ import React from "react";
 import styled from "styled-components";
 import { EMIBANKS, EMIINSTALLMENT } from "../../constants";
 
+
 function App() {
     const [secret,setSecret] = React.useState("American Express"); // Bank dropdown 
     const[orderAmount,setOrderAmount]= React.useState("10000"); // Amount 
     function Calc(){
+        alert('clicked')
         console.log('amount',orderAmount);
     }
   return (
     <>
         <Parent>
-            <Title>Calculate your monthly instalment options.</Title>
+            <Title>Calculate your monthly instalment options.</Title>  
             <form
-            className="search-form"
-            onSubmit={event => {
-                event.preventDefault();
-                Calc();
-            }}
-            >
-            <Topside>
+                className="search-form"
+                onSubmit={event => {
+                    event.preventDefault();
+                    Calc();
+                }}
+                >
+                <div 
+                    style={{
+                            paddingTop: '100px',
+                            display: 'flex',
+                            gap: '20px',
+                            position: 'relative',
+                            borderRadius: '15px'
+                            }}>
                     <Select
                         id="bankemi"
                         required
@@ -49,15 +58,13 @@ function App() {
                         }}
                     />
                     <Caculate>Calculate</Caculate>
-               
-            </Topside>
-            </form>
-            <Height />
-            <b> Choosed Bank : <strong> {secret}</strong></b>
-            <Terms>
-                <div>Terms</div>
-                <div>Monthly Instalments</div>
-            </Terms>
+                </div>
+                <Height />
+                <b> Choosed Bank : <strong> {secret}</strong></b>
+                <Terms>
+                    <div>Terms</div>
+                    <div>Monthly Instalments</div>
+                </Terms>
                 {EMIINSTALLMENT.map(data =>(
                     <EmithingParent key={data.installmentmonth}>
                         <EmithingChildOne>
@@ -67,13 +74,15 @@ function App() {
                         </EmithingChildOne>
                        <EmithingChildTwo>
                             <PriceAmount>₹{data.amount}/mo.</PriceAmount>
-                            <div style={{color: '#bf4800'}}>Includes total savings of ₹229.00.</div>
+                            <div style={{color: '#bf4800'}}>
+                                    Includes total savings of ₹229.00.
+                            </div>
                        </EmithingChildTwo>
                     </EmithingParent>
                 ))}
                 <br/>
+            </form>
         </Parent>
-        
     </>
   );
 }
@@ -111,7 +120,7 @@ const NocostEMI = styled.div`
 
 const EmithingParent = styled.div`
     font-family: 'Jost', sans-serif;
-    /* background-color: hotpink; */
+    background-color: yellow;
     padding: 20px;
     width: 100%;
     gap: 10px;
@@ -127,7 +136,7 @@ const Height = styled.div`
 `;
 
 const Terms = styled.div`
-    /* background-color: hotpink; */
+    background-color: hotpink;
     padding: 20px;
     width: 100%;
     display: flex;
@@ -167,16 +176,16 @@ const Select = styled.select`
      
 `;
 
-const Topside = styled.form`
-    padding-top: 100px;
-    display: flex;
-    gap: 20px;
-    position: relative;
-    font-size: 1.4rem;
-    /* background-color: antiquewhite; */
-    border-radius: 15px;
+// const Topside = styled.form`
+//     padding-top: 100px;
+//     display: flex;
+//     gap: 20px;
+//     position: relative;
+//     font-size: 1.4rem;
+//     background-color: antiquewhite;
+//     border-radius: 15px;
     
-`;
+// `;
 
 const Title = styled.div`
     padding-top: 120px;
